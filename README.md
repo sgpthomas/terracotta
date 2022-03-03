@@ -1,1 +1,1 @@
-# Symbolic Execution ala Rossette written in Rust
+# Symbolic Execution ala Rosette written in Rust
