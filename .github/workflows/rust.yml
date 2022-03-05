@@ -3,6 +3,18 @@ on: [push]
 
 jobs:
   build:
+    name: Build project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install stable
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+  format:
     name: Check Formatting
     runs-on: ubuntu-latest
     steps:
