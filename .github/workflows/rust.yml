@@ -3,25 +3,7 @@ on: [push]
 
 jobs:
   build:
-    name: Build project
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install stable
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
-      - name: Build
-        uses: actions-rs/cargo@v1
-        with:
-          command: build
-          args: --release
-
-  format:
     name: Check Formatting
-    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -47,3 +29,8 @@ jobs:
       with:
         command: clippy
         args: --all --all-targets -- --deny warnings
+    - name: Build
+      uses: actions-rs/cargo@v1
+      with:
+        command: build
+        args: --release
