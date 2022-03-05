@@ -78,7 +78,7 @@ where
     type Output = Self;
 
     fn sub(self, rhs: S) -> Self::Output {
-        self.sub(rhs.into())
+        self.subtract(rhs.into())
     }
 }
 
